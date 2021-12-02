@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+.pion {
+  background-color: #f2e7c8;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px black;
+  color: black;
+  font-weight: bold;
+  padding: 20px 20px;
+  font-size: 40px;
+  display: inline-block;
+  width: 87px;
+  height: 87px;
+  box-sizing: border-box;
+  font-family: 'Verdana';
+  text-transform: uppercase;
+}
+
+.pion--texte {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  margin-top: -15px;
+}
+
+.pion-xs {
+  width: 37px;
+  height: 37px;
+  font-size: 20px;
+  padding: 9px 9px;
+  border-radius: 5px;
+}
+
+.pion-faceoff .pion--texte {
+  display: none;
+}

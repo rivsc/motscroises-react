@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -8,10 +9,25 @@ function shuffleArray(array) {
   }
 }
 
+function handleStart() {}
+function handleDrag() {}
+function handleStop() {}
+
 function Pion(props) {
-  return <div className="pion pion-xs pion-faceoff">
+  return <Draggable
+    axis="x"
+    handle=".handle"
+    defaultPosition={{x: 0, y: 0}}
+    position={null}
+    grid={[37, 37]}
+    scale={1}
+    onStart={handleStart}
+    onDrag={handleDrag}
+    onStop={handleStop}>
+    <div className="pion pion-xs pion-faceoff handle">
       <p className="pion--texte">{props.lettre}</p>
-    </div>;
+    </div>
+  </Draggable>;
 }
 
 function App() {
@@ -61,7 +77,7 @@ function App() {
   //let liste_lettre = ['A', 'B', 'C'];
   return (
     <div>
-      {toutes_lettres.map((l) => <Pion lettre={l} />)}
+      {toutes_lettres.map((l) => <Pion lettre={l}/>)}
     </div>
   );
 }
